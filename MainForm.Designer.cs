@@ -308,7 +308,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(431, 0);
+            this.label2.Location = new System.Drawing.Point(447, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(256, 75);
             this.label2.TabIndex = 1;

@@ -19,11 +19,9 @@ namespace BookSystemVC
             public string admin { get; set; }
         }
 
-        //1.定义一个用户类型的List数组，userInfo类的代码在下方
-        List<userInfo> User = new List<userInfo>();
-        //2.我们要读取查询语句的数据，并且保存了。这里我们将使用IDataReader语句
-        //数据库类的实例，类的代码在下方
         DB db = new DB();
+        //定义一个用户类型的List数组
+        List<userInfo> User = new List<userInfo>();
         
         public Login()
         {
@@ -65,22 +63,39 @@ namespace BookSystemVC
                 {
                     if (UserID == User[i].user && UserPwd == User[i].password)
                     {
-                        MessageBox.Show("登录成功！");
                         return true;
                     }
                 }
-                MessageBox.Show("用户ID或密码错误！");
                 return false;
             }
         }
 
-        public bool UserAdd()
+        /// <summary>
+        /// 用户注册方法
+        /// </summary>
+        /// <param name="dbRead">
+        /// 需要数据库指令，用以判断该学工号是否已经注册
+        /// </param>
+        /// <param name="dbInsert">
+        /// 需要数据库指令，用以进行注册
+        /// </param>
+        /// <returns></returns>
+        public bool UserAdd(string dbRead, string dbInsert)
         {
-            //解析方法
-            //using ()
-            //{
+            DB db = new DB();
 
-            //}
+            //查询该学工号是否注册
+            if (db.read(dbRead).HasRows)
+            {
+                MessageBox.Show("该用户已经注册！请联系管理员。");
+                return false;
+            }
+
+            //注册用户
+            if (db.Execute(dbInsert) > 0)
+            {
+                return true;
+            }
             return false;
         }
     }
