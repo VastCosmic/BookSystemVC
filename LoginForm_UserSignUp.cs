@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookSystemVC
 {
-    public partial class Form1 : Form
+    public partial class LoginForm_UserSignUp : Form
     {
-        public Form1()
+        public LoginForm_UserSignUp()
         {
             InitializeComponent();
         }
