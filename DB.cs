@@ -20,7 +20,7 @@ namespace BookSystemVC
             MySqlConnection con = new MySqlConnection(connetStr);
 
             con.Open();
-            MessageBox.Show("数据库连接成功");
+            //MessageBox.Show("数据库连接成功");
             return con;
         }
 

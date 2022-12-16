@@ -74,20 +74,27 @@ namespace BookSystemVC
         /// 用户注册方法
         /// </summary>
         /// <param name="dbRead">
-        /// 需要数据库指令，用以判断该学工号是否已经注册
+        /// 需要数据库指令，用以判断该用户名、学工号是否已经注册
         /// </param>
         /// <param name="dbInsert">
         /// 需要数据库指令，用以进行注册
         /// </param>
         /// <returns></returns>
-        public bool UserAdd(string dbRead, string dbInsert)
+        public bool UserAdd(string dbRead_user, string dbRead_id, string dbInsert)
         {
             DB db = new DB();
 
-            //查询该学工号是否注册
-            if (db.read(dbRead).HasRows)
+            //查询该用户名是否注册
+            if (db.read(dbRead_user).HasRows)
             {
-                MessageBox.Show("该用户已经注册！请联系管理员。");
+                MessageBox.Show("该用户名已经注册！请联系管理员。");
+                return false;
+            }
+
+            //查询该学工号是否注册
+            if (db.read(dbRead_id).HasRows)
+            {
+                MessageBox.Show("该学工号已经注册！请联系管理员。");
                 return false;
             }
 
