@@ -45,6 +45,10 @@ namespace BookSystemVC
             {
                 return SearchByBookid(key);
             }
+            else if (method == "all")
+            {
+                return SearchByBookname(string.Empty);
+            }
             return bookInfo;
         }
         protected List<BookInfo> SearchByCategory(string key)

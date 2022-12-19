@@ -19,6 +19,11 @@ namespace BookSystemVC
         Book book = new Book();
         private void btn_search_Click(object sender, System.EventArgs e)
         {
+            if ((txt_search.Text == string.Empty || SearchContorl.SelectedItem == null) && (SearchContorl.Text != "全部"))
+            {
+                MessageBox.Show("请完善查询信息！","提示");
+                return;
+            }
             string method = string.Empty;
             if(SearchContorl.SelectedItem != null)
             {
@@ -38,6 +43,10 @@ namespace BookSystemVC
                 {
                     method = "bookid";
                 }
+                else if (SearchContorl.Text == "全部")
+                {
+                    method = "all";
+                }
                 if (method != string.Empty)
                 {
                     dataGridView.ReadOnly = true;
@@ -47,6 +56,25 @@ namespace BookSystemVC
                     dataGridView.Refresh();
                 }
             }
+        }
+
+        private void btnBorrowSearch_Click(object sender, System.EventArgs e)
+        {
+            if(txtID.Text == string.Empty)
+            {
+                MessageBox.Show("请输入书号！","提示");
+                return ;
+            }
+        }
+
+        private void btnReturn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnBorrow_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

@@ -131,6 +131,7 @@
             this.SearchContorl.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SearchContorl.FormattingEnabled = true;
             this.SearchContorl.Items.AddRange(new object[] {
+            "全部",
             "按照书名查找",
             "按照类别查找",
             "按照作者查找",
@@ -182,6 +183,7 @@
             this.btnBorrowSearch.TabIndex = 14;
             this.btnBorrowSearch.Text = "检索";
             this.btnBorrowSearch.UseVisualStyleBackColor = true;
+            this.btnBorrowSearch.Click += new System.EventHandler(this.btnBorrowSearch_Click);
             // 
             // label5
             // 
@@ -231,6 +233,7 @@
             this.btnBorrow.TabIndex = 9;
             this.btnBorrow.Text = "借阅";
             this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
             // btnReturn
             // 
@@ -240,6 +243,7 @@
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "还书";
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // lblstatus
             // 
@@ -338,7 +342,7 @@
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "图书管理系统";
             this.MainControl.ResumeLayout(false);
             this.PageSearch.ResumeLayout(false);
             this.PageSearch.PerformLayout();
