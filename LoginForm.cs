@@ -58,7 +58,7 @@ namespace BookSystemVC
             //启动新线程主应用
             Thread thread = new Thread(new ParameterizedThreadStart(StartMainForm));
             string user = txt_user.Text;
-            thread.Start(1);
+            thread.Start("admin");
             Close();
         }
     }

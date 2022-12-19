@@ -10,15 +10,6 @@ namespace BookSystemVC
 {
     internal class Login
     {
-        //public class userInfo
-        //{
-        //    public string user { get; set; }
-        //    public string studentID { get; set; }
-        //    public string name { get; set; }
-        //    public string password { get; set; }
-        //    public string admin { get; set; }
-        //}
-
         DB db = new DB();
         ////定义一个用户类型的List数组
         List<User> User = new List<User>();

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -122,6 +123,50 @@ namespace BookSystemVC
             }
             btnBorrowSearch_Click(sender, e);
             btnBorrow.Enabled = false;
+        }
+
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //退出登录并启动新登录界面
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            //启动新线程应用
+            Thread thread = new Thread(new ThreadStart(StartLoginForm));
+            thread.Start();
+            Close();
+        }
+        private void StartLoginForm()
+        {
+            LoginForm loginForm = new LoginForm();
+            Application.Run(loginForm);
+        }
+
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+            AccountInfoForm accountInfoForm = new AccountInfoForm(user.user);          
+            accountInfoForm.ShowDialog();
+        }
+
+        private void btn_changePwd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

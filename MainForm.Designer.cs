@@ -53,6 +53,12 @@
             this.lblBorrowTitle = new System.Windows.Forms.Label();
             this.PageAccount = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_info = new System.Windows.Forms.Button();
+            this.btn_record = new System.Windows.Forms.Button();
+            this.btn_changeInfo = new System.Windows.Forms.Button();
+            this.btn_changePwd = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_changeAdmin = new System.Windows.Forms.Button();
             this.MainControl.SuspendLayout();
             this.PageSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -317,10 +323,16 @@
             // 
             // PageAccount
             // 
+            this.PageAccount.Controls.Add(this.btn_changeAdmin);
+            this.PageAccount.Controls.Add(this.btn_logout);
+            this.PageAccount.Controls.Add(this.btn_changePwd);
+            this.PageAccount.Controls.Add(this.btn_changeInfo);
+            this.PageAccount.Controls.Add(this.btn_record);
+            this.PageAccount.Controls.Add(this.btn_info);
             this.PageAccount.Controls.Add(this.label2);
             this.PageAccount.Location = new System.Drawing.Point(4, 30);
             this.PageAccount.Name = "PageAccount";
-            this.PageAccount.Size = new System.Drawing.Size(1151, 602);
+            this.PageAccount.Size = new System.Drawing.Size(1151, 652);
             this.PageAccount.TabIndex = 3;
             this.PageAccount.Text = "账户管理";
             this.PageAccount.UseVisualStyleBackColor = true;
@@ -334,6 +346,70 @@
             this.label2.Size = new System.Drawing.Size(256, 75);
             this.label2.TabIndex = 1;
             this.label2.Text = "账户管理";
+            // 
+            // btn_info
+            // 
+            this.btn_info.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_info.Location = new System.Drawing.Point(402, 123);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(347, 75);
+            this.btn_info.TabIndex = 2;
+            this.btn_info.Text = "账户信息";
+            this.btn_info.UseVisualStyleBackColor = true;
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
+            // btn_record
+            // 
+            this.btn_record.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_record.Location = new System.Drawing.Point(599, 246);
+            this.btn_record.Name = "btn_record";
+            this.btn_record.Size = new System.Drawing.Size(150, 75);
+            this.btn_record.TabIndex = 4;
+            this.btn_record.Text = "借书记录";
+            this.btn_record.UseVisualStyleBackColor = true;
+            // 
+            // btn_changeInfo
+            // 
+            this.btn_changeInfo.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_changeInfo.Location = new System.Drawing.Point(402, 246);
+            this.btn_changeInfo.Name = "btn_changeInfo";
+            this.btn_changeInfo.Size = new System.Drawing.Size(150, 75);
+            this.btn_changeInfo.TabIndex = 5;
+            this.btn_changeInfo.Text = "修改信息";
+            this.btn_changeInfo.UseVisualStyleBackColor = true;
+            // 
+            // btn_changePwd
+            // 
+            this.btn_changePwd.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_changePwd.Location = new System.Drawing.Point(402, 369);
+            this.btn_changePwd.Name = "btn_changePwd";
+            this.btn_changePwd.Size = new System.Drawing.Size(150, 75);
+            this.btn_changePwd.TabIndex = 6;
+            this.btn_changePwd.Text = "修改密码";
+            this.btn_changePwd.UseVisualStyleBackColor = true;
+            this.btn_changePwd.Click += new System.EventHandler(this.btn_changePwd_Click);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_logout.Location = new System.Drawing.Point(402, 492);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(347, 75);
+            this.btn_logout.TabIndex = 7;
+            this.btn_logout.Text = "退出登录";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // btn_changeAdmin
+            // 
+            this.btn_changeAdmin.Enabled = false;
+            this.btn_changeAdmin.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_changeAdmin.Location = new System.Drawing.Point(599, 369);
+            this.btn_changeAdmin.Name = "btn_changeAdmin";
+            this.btn_changeAdmin.Size = new System.Drawing.Size(150, 75);
+            this.btn_changeAdmin.TabIndex = 8;
+            this.btn_changeAdmin.Text = "修改权限";
+            this.btn_changeAdmin.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -385,5 +461,11 @@
         private System.Windows.Forms.Button btnBorrowSearch;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btn_changeAdmin;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_changePwd;
+        private System.Windows.Forms.Button btn_changeInfo;
+        private System.Windows.Forms.Button btn_record;
+        private System.Windows.Forms.Button btn_info;
     }
 }
