@@ -20,7 +20,6 @@ namespace BookSystemVC
         }
 
         //登录
-        //private Thread thread;
         private void btn_login_Click(object sender, EventArgs e)
         {
             Login login = new Login();

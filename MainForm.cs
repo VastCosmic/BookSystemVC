@@ -14,13 +14,53 @@ namespace BookSystemVC
 {
     public partial class MainForm : Form
     {
+        User user = new User();
         public MainForm(object user_object)
         {
             InitializeComponent();           
             user.user = user_object.ToString(); //取得user账户
+            LoadUser();
+            Welcome();
+            if (User[0].admin == "1")
+                OpenAdmin();
+        }
+        //定义一个用户类型的List数组
+        List<User> User = new List<User>();
+        //加载用户信息
+        protected void LoadUser()
+        {
+            DB db = new DB();
+            //解析方法
+            using (IDataReader read = db.read("select * from usertable where user='" + user.user + "'"))
+            {
+                while (read.Read())
+                {
+                    User a = new User
+                    {
+                        user = read[0].ToString(),
+                        studentID = read[1].ToString(),
+                        name = read[2].ToString(),
+                        password = "***",
+                        admin = read[4].ToString()
+                    };
+                    User.Add(a);
+                }
+            }
         }
 
-        User user = new User();
+        /// <summary>
+        /// 打开管理员权限界面
+        /// </summary>
+        private void OpenAdmin()
+        {
+            btn_changeAdmin.Enabled = true;
+        }
+
+        protected void Welcome()
+        {
+            lbl_wel_user.Text=User[0].user+", 您好 ~~";
+        }
+
         Book book = new Book();
         private void btn_search_Click(object sender, System.EventArgs e)
         {
@@ -98,7 +138,6 @@ namespace BookSystemVC
             }
         }
 
-
         private void btnReturn_Click(object sender, System.EventArgs e)
         {
             if (lbl_bookid.Text != "请输入书号")
@@ -126,22 +165,6 @@ namespace BookSystemVC
         }
 
         
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         //退出登录并启动新登录界面
@@ -166,7 +189,28 @@ namespace BookSystemVC
 
         private void btn_changePwd_Click(object sender, EventArgs e)
         {
+            ChangePwdForm changePwdForm = new ChangePwdForm(user.user);
+            changePwdForm.ShowDialog();
+        }
 
+        private void btn_changeInfo_Click(object sender, EventArgs e)
+        {
+            ChangeInfoForm changeInfoForm = new ChangeInfoForm(user.user);
+            changeInfoForm.ShowDialog();
+        }
+
+        private void btn_record_Click(object sender, EventArgs e)
+        {
+            dataGridViewAccount.DataSource = null;
+            BorrowRecord borrowRecord = new BorrowRecord();
+            dataGridViewAccount.DataSource = borrowRecord.LoadRecord(User[0].user);
+            dataGridViewAccount.Update();
+        }
+
+        private void btn_changeAdmin_Click(object sender, EventArgs e)
+        {
+            ChangeAdminForm changeAdminForm = new ChangeAdminForm();
+            changeAdminForm.ShowDialog();
         }
     }
 }
