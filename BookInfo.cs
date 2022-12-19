@@ -22,6 +22,6 @@ namespace BookSystemVC
         //出版社
         public string press { get; set; }
         //状态
-        public string state { get; set; }
+        public string status { get; set; }
     }
 }

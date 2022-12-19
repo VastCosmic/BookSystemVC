@@ -38,10 +38,10 @@
             this.lblSearchTitle = new System.Windows.Forms.Label();
             this.PageBookBorrow = new System.Windows.Forms.TabPage();
             this.btnBorrowSearch = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_status = new System.Windows.Forms.Label();
+            this.lbl_author = new System.Windows.Forms.Label();
+            this.lbl_bookname = new System.Windows.Forms.Label();
+            this.lbl_bookid = new System.Windows.Forms.Label();
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.lblstatus = new System.Windows.Forms.Label();
@@ -69,14 +69,14 @@
             this.MainControl.Location = new System.Drawing.Point(13, 13);
             this.MainControl.Name = "MainControl";
             this.MainControl.SelectedIndex = 0;
-            this.MainControl.Size = new System.Drawing.Size(1159, 636);
+            this.MainControl.Size = new System.Drawing.Size(1159, 686);
             this.MainControl.TabIndex = 0;
             // 
             // PageMain
             // 
             this.PageMain.Location = new System.Drawing.Point(4, 30);
             this.PageMain.Name = "PageMain";
-            this.PageMain.Size = new System.Drawing.Size(1151, 602);
+            this.PageMain.Size = new System.Drawing.Size(1151, 652);
             this.PageMain.TabIndex = 0;
             this.PageMain.Text = "主界面";
             this.PageMain.UseVisualStyleBackColor = true;
@@ -90,21 +90,21 @@
             this.PageSearch.Controls.Add(this.lblSearchTitle);
             this.PageSearch.Location = new System.Drawing.Point(4, 30);
             this.PageSearch.Name = "PageSearch";
-            this.PageSearch.Size = new System.Drawing.Size(1151, 602);
+            this.PageSearch.Size = new System.Drawing.Size(1151, 652);
             this.PageSearch.TabIndex = 2;
             this.PageSearch.Text = "图书查询";
             this.PageSearch.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(48, 140);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 23;
-            this.dataGridView.Size = new System.Drawing.Size(1043, 459);
+            this.dataGridView.Size = new System.Drawing.Size(1043, 509);
             this.dataGridView.TabIndex = 16;
             // 
             // btn_search
@@ -155,10 +155,10 @@
             // PageBookBorrow
             // 
             this.PageBookBorrow.Controls.Add(this.btnBorrowSearch);
-            this.PageBookBorrow.Controls.Add(this.label5);
-            this.PageBookBorrow.Controls.Add(this.label4);
-            this.PageBookBorrow.Controls.Add(this.label3);
-            this.PageBookBorrow.Controls.Add(this.label1);
+            this.PageBookBorrow.Controls.Add(this.lbl_status);
+            this.PageBookBorrow.Controls.Add(this.lbl_author);
+            this.PageBookBorrow.Controls.Add(this.lbl_bookname);
+            this.PageBookBorrow.Controls.Add(this.lbl_bookid);
             this.PageBookBorrow.Controls.Add(this.btnBorrow);
             this.PageBookBorrow.Controls.Add(this.btnReturn);
             this.PageBookBorrow.Controls.Add(this.lblstatus);
@@ -170,7 +170,7 @@
             this.PageBookBorrow.Controls.Add(this.lblBorrowTitle);
             this.PageBookBorrow.Location = new System.Drawing.Point(4, 30);
             this.PageBookBorrow.Name = "PageBookBorrow";
-            this.PageBookBorrow.Size = new System.Drawing.Size(1151, 602);
+            this.PageBookBorrow.Size = new System.Drawing.Size(1151, 652);
             this.PageBookBorrow.TabIndex = 1;
             this.PageBookBorrow.Text = "图书借还";
             this.PageBookBorrow.UseVisualStyleBackColor = true;
@@ -185,48 +185,49 @@
             this.btnBorrowSearch.UseVisualStyleBackColor = true;
             this.btnBorrowSearch.Click += new System.EventHandler(this.btnBorrowSearch_Click);
             // 
-            // label5
+            // lbl_status
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(455, 378);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 27);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "(请输入书号)";
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_status.Location = new System.Drawing.Point(455, 378);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(126, 27);
+            this.lbl_status.TabIndex = 13;
+            this.lbl_status.Text = "(请输入书号)";
             // 
-            // label4
+            // lbl_author
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(455, 334);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 27);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "(请输入书号)";
+            this.lbl_author.AutoSize = true;
+            this.lbl_author.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_author.Location = new System.Drawing.Point(455, 334);
+            this.lbl_author.Name = "lbl_author";
+            this.lbl_author.Size = new System.Drawing.Size(126, 27);
+            this.lbl_author.TabIndex = 12;
+            this.lbl_author.Text = "(请输入书号)";
             // 
-            // label3
+            // lbl_bookname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(455, 290);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 27);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "(请输入书号)";
+            this.lbl_bookname.AutoSize = true;
+            this.lbl_bookname.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_bookname.Location = new System.Drawing.Point(455, 290);
+            this.lbl_bookname.Name = "lbl_bookname";
+            this.lbl_bookname.Size = new System.Drawing.Size(126, 27);
+            this.lbl_bookname.TabIndex = 11;
+            this.lbl_bookname.Text = "(请输入书号)";
             // 
-            // label1
+            // lbl_bookid
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(455, 246);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 27);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "(请输入书号)";
+            this.lbl_bookid.AutoSize = true;
+            this.lbl_bookid.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_bookid.Location = new System.Drawing.Point(455, 246);
+            this.lbl_bookid.Name = "lbl_bookid";
+            this.lbl_bookid.Size = new System.Drawing.Size(126, 27);
+            this.lbl_bookid.TabIndex = 10;
+            this.lbl_bookid.Text = "(请输入书号)";
             // 
             // btnBorrow
             // 
+            this.btnBorrow.Enabled = false;
             this.btnBorrow.Location = new System.Drawing.Point(636, 487);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(200, 80);
@@ -237,6 +238,7 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.Enabled = false;
             this.btnReturn.Location = new System.Drawing.Point(315, 487);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(200, 80);
@@ -337,11 +339,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1184, 711);
             this.Controls.Add(this.MainControl);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "图书管理系统";
             this.MainControl.ResumeLayout(false);
             this.PageSearch.ResumeLayout(false);
@@ -374,10 +377,10 @@
         private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnReturn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.Label lbl_author;
+        private System.Windows.Forms.Label lbl_bookname;
+        private System.Windows.Forms.Label lbl_bookid;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btnBorrowSearch;
         private System.Windows.Forms.Button btn_search;

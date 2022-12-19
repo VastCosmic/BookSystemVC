@@ -10,18 +10,18 @@ namespace BookSystemVC
 {
     internal class Login
     {
-        public class userInfo
-        {
-            public string user { get; set; }
-            public string studentID { get; set; }
-            public string name { get; set; }
-            public string password { get; set; }
-            public string admin { get; set; }
-        }
+        //public class userInfo
+        //{
+        //    public string user { get; set; }
+        //    public string studentID { get; set; }
+        //    public string name { get; set; }
+        //    public string password { get; set; }
+        //    public string admin { get; set; }
+        //}
 
         DB db = new DB();
-        //定义一个用户类型的List数组
-        List<userInfo> User = new List<userInfo>();
+        ////定义一个用户类型的List数组
+        List<User> User = new List<User>();
         
         public Login()
         {
@@ -36,7 +36,7 @@ namespace BookSystemVC
             {
                 while (read.Read())
                 {
-                    userInfo a = new userInfo
+                    User a = new User
                     {
                         user = read[0].ToString(),
                         studentID = read[1].ToString(),

@@ -20,15 +20,17 @@ namespace BookSystemVC
         }
 
         //登录
-        private Thread thread;
+        //private Thread thread;
         private void btn_login_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             if (login.UserLogin(txt_user.Text, txt_pwd.Text) == true)
             {
                 MessageBox.Show("登录成功！");
-                thread = new Thread(new ThreadStart(StartMainForm));
-                thread.Start();
+                //启动新线程主应用
+                Thread thread = new Thread(new ParameterizedThreadStart(StartMainForm));
+                string user = txt_user.Text;
+                thread.Start(user);
                 Close();
             }
             else
@@ -45,10 +47,19 @@ namespace BookSystemVC
         }
 
         //启动主界面
-        private void StartMainForm()
+        private void StartMainForm(object user)
         {
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(user);
             Application.Run(mainForm);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //启动新线程主应用
+            Thread thread = new Thread(new ParameterizedThreadStart(StartMainForm));
+            string user = txt_user.Text;
+            thread.Start(1);
+            Close();
         }
     }
 }
