@@ -84,6 +84,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookInfo.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="LoginForm.cs">

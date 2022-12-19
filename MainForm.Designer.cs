@@ -31,8 +31,9 @@
             this.MainControl = new System.Windows.Forms.TabControl();
             this.PageMain = new System.Windows.Forms.TabPage();
             this.PageSearch = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.SearchContorl = new System.Windows.Forms.ComboBox();
             this.lblSearchTitle = new System.Windows.Forms.Label();
             this.PageBookBorrow = new System.Windows.Forms.TabPage();
@@ -54,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.MainControl.SuspendLayout();
             this.PageSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.PageBookBorrow.SuspendLayout();
             this.PageAccount.SuspendLayout();
             this.SuspendLayout();
@@ -81,8 +83,9 @@
             // 
             // PageSearch
             // 
-            this.PageSearch.Controls.Add(this.button1);
-            this.PageSearch.Controls.Add(this.textBox1);
+            this.PageSearch.Controls.Add(this.dataGridView);
+            this.PageSearch.Controls.Add(this.btn_search);
+            this.PageSearch.Controls.Add(this.txt_search);
             this.PageSearch.Controls.Add(this.SearchContorl);
             this.PageSearch.Controls.Add(this.lblSearchTitle);
             this.PageSearch.Location = new System.Drawing.Point(4, 30);
@@ -92,23 +95,36 @@
             this.PageSearch.Text = "图书查询";
             this.PageSearch.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dataGridView
             // 
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(846, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 47);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "检索";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(48, 140);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.Size = new System.Drawing.Size(1043, 459);
+            this.dataGridView.TabIndex = 16;
             // 
-            // textBox1
+            // btn_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(348, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(455, 34);
-            this.textBox1.TabIndex = 2;
+            this.btn_search.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_search.Location = new System.Drawing.Point(846, 87);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(245, 47);
+            this.btn_search.TabIndex = 15;
+            this.btn_search.Text = "检索";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_search.Location = new System.Drawing.Point(348, 94);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(455, 34);
+            this.txt_search.TabIndex = 2;
             // 
             // SearchContorl
             // 
@@ -119,7 +135,7 @@
             "按照类别查找",
             "按照作者查找",
             "按照书号查找"});
-            this.SearchContorl.Location = new System.Drawing.Point(48, 116);
+            this.SearchContorl.Location = new System.Drawing.Point(48, 93);
             this.SearchContorl.Name = "SearchContorl";
             this.SearchContorl.Size = new System.Drawing.Size(263, 35);
             this.SearchContorl.TabIndex = 1;
@@ -134,7 +150,6 @@
             this.lblSearchTitle.Size = new System.Drawing.Size(256, 75);
             this.lblSearchTitle.TabIndex = 0;
             this.lblSearchTitle.Text = "图书查询";
-            this.lblSearchTitle.Click += new System.EventHandler(this.lblSearchTitle_Click);
             // 
             // PageBookBorrow
             // 
@@ -327,6 +342,7 @@
             this.MainControl.ResumeLayout(false);
             this.PageSearch.ResumeLayout(false);
             this.PageSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.PageBookBorrow.ResumeLayout(false);
             this.PageBookBorrow.PerformLayout();
             this.PageAccount.ResumeLayout(false);
@@ -343,7 +359,7 @@
         private System.Windows.Forms.Label lblSearchTitle;
         private System.Windows.Forms.TabPage PageBookBorrow;
         private System.Windows.Forms.TabPage PageAccount;
-        private System.Windows.Forms.ComboBox SearchContorl;
+        private System.Windows.Forms.ComboBox SearchContorl;    
         private System.Windows.Forms.Label lblBorrowTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBorrowIDInput;
@@ -358,8 +374,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btnBorrowSearch;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
