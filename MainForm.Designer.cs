@@ -30,6 +30,8 @@
         {
             this.MainControl = new System.Windows.Forms.TabControl();
             this.PageMain = new System.Windows.Forms.TabPage();
+            this.lbl_wel_user = new System.Windows.Forms.Label();
+            this.lbl_wel = new System.Windows.Forms.Label();
             this.PageSearch = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btn_search = new System.Windows.Forms.Button();
@@ -52,6 +54,7 @@
             this.lblBorrowIDInput = new System.Windows.Forms.Label();
             this.lblBorrowTitle = new System.Windows.Forms.Label();
             this.PageAccount = new System.Windows.Forms.TabPage();
+            this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
             this.btn_changeAdmin = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_changePwd = new System.Windows.Forms.Button();
@@ -59,9 +62,14 @@
             this.btn_record = new System.Windows.Forms.Button();
             this.btn_info = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
-            this.lbl_wel = new System.Windows.Forms.Label();
-            this.lbl_wel_user = new System.Windows.Forms.Label();
+            this.PageBookAdmin = new System.Windows.Forms.TabPage();
+            this.lbl_title = new System.Windows.Forms.Label();
+            this.btn_add_book = new System.Windows.Forms.Button();
+            this.btn_change_book = new System.Windows.Forms.Button();
+            this.btn_delet_book = new System.Windows.Forms.Button();
+            this.btn_add_cate = new System.Windows.Forms.Button();
+            this.btn_change_cate = new System.Windows.Forms.Button();
+            this.dataGridView_admin = new System.Windows.Forms.DataGridView();
             this.MainControl.SuspendLayout();
             this.PageMain.SuspendLayout();
             this.PageSearch.SuspendLayout();
@@ -69,6 +77,8 @@
             this.PageBookBorrow.SuspendLayout();
             this.PageAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
+            this.PageBookAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_admin)).BeginInit();
             this.SuspendLayout();
             // 
             // MainControl
@@ -77,11 +87,13 @@
             this.MainControl.Controls.Add(this.PageSearch);
             this.MainControl.Controls.Add(this.PageBookBorrow);
             this.MainControl.Controls.Add(this.PageAccount);
+            this.MainControl.Controls.Add(this.PageBookAdmin);
             this.MainControl.Location = new System.Drawing.Point(13, 13);
             this.MainControl.Name = "MainControl";
             this.MainControl.SelectedIndex = 0;
             this.MainControl.Size = new System.Drawing.Size(1159, 686);
             this.MainControl.TabIndex = 0;
+            this.MainControl.SelectedIndexChanged += new System.EventHandler(this.MainControl_SelectedIndexChanged);
             // 
             // PageMain
             // 
@@ -93,6 +105,26 @@
             this.PageMain.TabIndex = 0;
             this.PageMain.Text = "主界面";
             this.PageMain.UseVisualStyleBackColor = true;
+            // 
+            // lbl_wel_user
+            // 
+            this.lbl_wel_user.AutoSize = true;
+            this.lbl_wel_user.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_wel_user.Location = new System.Drawing.Point(253, 50);
+            this.lbl_wel_user.Name = "lbl_wel_user";
+            this.lbl_wel_user.Size = new System.Drawing.Size(130, 64);
+            this.lbl_wel_user.TabIndex = 1;
+            this.lbl_wel_user.Text = "user";
+            // 
+            // lbl_wel
+            // 
+            this.lbl_wel.AutoSize = true;
+            this.lbl_wel.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_wel.Location = new System.Drawing.Point(251, 137);
+            this.lbl_wel.Name = "lbl_wel";
+            this.lbl_wel.Size = new System.Drawing.Size(648, 75);
+            this.lbl_wel.TabIndex = 0;
+            this.lbl_wel.Text = "欢迎使用图书管理系统！";
             // 
             // PageSearch
             // 
@@ -345,6 +377,19 @@
             this.PageAccount.Text = "账户管理";
             this.PageAccount.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewAccount
+            // 
+            this.dataGridViewAccount.AllowUserToDeleteRows = false;
+            this.dataGridViewAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAccount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewAccount.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAccount.Location = new System.Drawing.Point(411, 162);
+            this.dataGridViewAccount.Name = "dataGridViewAccount";
+            this.dataGridViewAccount.RowTemplate.Height = 23;
+            this.dataGridViewAccount.Size = new System.Drawing.Size(708, 444);
+            this.dataGridViewAccount.TabIndex = 9;
+            // 
             // btn_changeAdmin
             // 
             this.btn_changeAdmin.Enabled = false;
@@ -422,38 +467,101 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "账户管理";
             // 
-            // dataGridViewAccount
+            // PageBookAdmin
             // 
-            this.dataGridViewAccount.AllowUserToDeleteRows = false;
-            this.dataGridViewAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAccount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewAccount.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAccount.Location = new System.Drawing.Point(411, 162);
-            this.dataGridViewAccount.Name = "dataGridViewAccount";
-            this.dataGridViewAccount.RowTemplate.Height = 23;
-            this.dataGridViewAccount.Size = new System.Drawing.Size(708, 444);
-            this.dataGridViewAccount.TabIndex = 9;
+            this.PageBookAdmin.Controls.Add(this.dataGridView_admin);
+            this.PageBookAdmin.Controls.Add(this.btn_change_cate);
+            this.PageBookAdmin.Controls.Add(this.btn_add_cate);
+            this.PageBookAdmin.Controls.Add(this.btn_delet_book);
+            this.PageBookAdmin.Controls.Add(this.btn_change_book);
+            this.PageBookAdmin.Controls.Add(this.btn_add_book);
+            this.PageBookAdmin.Controls.Add(this.lbl_title);
+            this.PageBookAdmin.Location = new System.Drawing.Point(4, 30);
+            this.PageBookAdmin.Name = "PageBookAdmin";
+            this.PageBookAdmin.Size = new System.Drawing.Size(1151, 652);
+            this.PageBookAdmin.TabIndex = 4;
+            this.PageBookAdmin.Text = "图书管理";
+            this.PageBookAdmin.UseVisualStyleBackColor = true;
             // 
-            // lbl_wel
+            // lbl_title
             // 
-            this.lbl_wel.AutoSize = true;
-            this.lbl_wel.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_wel.Location = new System.Drawing.Point(251, 137);
-            this.lbl_wel.Name = "lbl_wel";
-            this.lbl_wel.Size = new System.Drawing.Size(648, 75);
-            this.lbl_wel.TabIndex = 0;
-            this.lbl_wel.Text = "欢迎使用图书管理系统！";
+            this.lbl_title.AutoSize = true;
+            this.lbl_title.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_title.Location = new System.Drawing.Point(76, 39);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Size = new System.Drawing.Size(256, 75);
+            this.lbl_title.TabIndex = 2;
+            this.lbl_title.Text = "图书管理";
             // 
-            // lbl_wel_user
+            // btn_add_book
             // 
-            this.lbl_wel_user.AutoSize = true;
-            this.lbl_wel_user.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_wel_user.Location = new System.Drawing.Point(253, 50);
-            this.lbl_wel_user.Name = "lbl_wel_user";
-            this.lbl_wel_user.Size = new System.Drawing.Size(130, 64);
-            this.lbl_wel_user.TabIndex = 1;
-            this.lbl_wel_user.Text = "user";
+            this.btn_add_book.Enabled = false;
+            this.btn_add_book.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_add_book.Location = new System.Drawing.Point(37, 165);
+            this.btn_add_book.Name = "btn_add_book";
+            this.btn_add_book.Size = new System.Drawing.Size(150, 75);
+            this.btn_add_book.TabIndex = 3;
+            this.btn_add_book.Text = "添加图书信息";
+            this.btn_add_book.UseVisualStyleBackColor = true;
+            this.btn_add_book.Click += new System.EventHandler(this.btn_add_book_Click);
+            // 
+            // btn_change_book
+            // 
+            this.btn_change_book.Enabled = false;
+            this.btn_change_book.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_change_book.Location = new System.Drawing.Point(37, 275);
+            this.btn_change_book.Name = "btn_change_book";
+            this.btn_change_book.Size = new System.Drawing.Size(150, 75);
+            this.btn_change_book.TabIndex = 4;
+            this.btn_change_book.Text = "修改图书信息";
+            this.btn_change_book.UseVisualStyleBackColor = true;
+            // 
+            // btn_delet_book
+            // 
+            this.btn_delet_book.Enabled = false;
+            this.btn_delet_book.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_delet_book.Location = new System.Drawing.Point(37, 390);
+            this.btn_delet_book.Name = "btn_delet_book";
+            this.btn_delet_book.Size = new System.Drawing.Size(150, 75);
+            this.btn_delet_book.TabIndex = 5;
+            this.btn_delet_book.Text = "删除图书信息";
+            this.btn_delet_book.UseVisualStyleBackColor = true;
+            // 
+            // btn_add_cate
+            // 
+            this.btn_add_cate.Enabled = false;
+            this.btn_add_cate.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_add_cate.Location = new System.Drawing.Point(220, 165);
+            this.btn_add_cate.Name = "btn_add_cate";
+            this.btn_add_cate.Size = new System.Drawing.Size(150, 75);
+            this.btn_add_cate.TabIndex = 6;
+            this.btn_add_cate.Text = "添加图书类别";
+            this.btn_add_cate.UseVisualStyleBackColor = true;
+            // 
+            // btn_change_cate
+            // 
+            this.btn_change_cate.Enabled = false;
+            this.btn_change_cate.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_change_cate.Location = new System.Drawing.Point(220, 275);
+            this.btn_change_cate.Name = "btn_change_cate";
+            this.btn_change_cate.Size = new System.Drawing.Size(150, 75);
+            this.btn_change_cate.TabIndex = 7;
+            this.btn_change_cate.Text = "修改图书类别";
+            this.btn_change_cate.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_admin
+            // 
+            this.dataGridView_admin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_admin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_admin.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView_admin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_admin.Location = new System.Drawing.Point(391, 165);
+            this.dataGridView_admin.Name = "dataGridView_admin";
+            this.dataGridView_admin.RowTemplate.Height = 23;
+            this.dataGridView_admin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_admin.Size = new System.Drawing.Size(740, 469);
+            this.dataGridView_admin.TabIndex = 8;
+            this.dataGridView_admin.Visible = false;
             // 
             // MainForm
             // 
@@ -477,6 +585,9 @@
             this.PageAccount.ResumeLayout(false);
             this.PageAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).EndInit();
+            this.PageBookAdmin.ResumeLayout(false);
+            this.PageBookAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_admin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,5 +628,13 @@
         private System.Windows.Forms.DataGridView dataGridViewAccount;
         private System.Windows.Forms.Label lbl_wel;
         private System.Windows.Forms.Label lbl_wel_user;
+        private System.Windows.Forms.TabPage PageBookAdmin;
+        private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.Button btn_change_cate;
+        private System.Windows.Forms.Button btn_add_cate;
+        private System.Windows.Forms.Button btn_delet_book;
+        private System.Windows.Forms.Button btn_change_book;
+        private System.Windows.Forms.Button btn_add_book;
+        private System.Windows.Forms.DataGridView dataGridView_admin;
     }
 }

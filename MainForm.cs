@@ -54,6 +54,12 @@ namespace BookSystemVC
         private void OpenAdmin()
         {
             btn_changeAdmin.Enabled = true;
+            btn_add_book.Enabled = true;
+            btn_delet_book.Enabled = true;
+            btn_change_book.Enabled = true;
+            btn_add_cate.Enabled = true;
+            btn_change_cate.Enabled = true;
+            dataGridView_admin.Visible = true;
         }
 
         protected void Welcome()
@@ -211,6 +217,35 @@ namespace BookSystemVC
         {
             ChangeAdminForm changeAdminForm = new ChangeAdminForm();
             changeAdminForm.ShowDialog();
+        }
+    
+    
+        protected void LoadBookAdminData()
+        {
+            dataGridView_admin.ReadOnly = true;
+            dataGridView_admin.DataSource = null;
+            dataGridView_admin.DataSource = book.BookSearch("all", String.Empty);
+            dataGridView_admin.Update();
+            dataGridView_admin.Refresh();
+        }
+
+        private void btn_add_book_Click(object sender, EventArgs e)
+        {
+            ShowBookAdmin();
+        }
+
+        protected void ShowBookAdmin()
+        {
+            BookInfoChange bookInfoChange = new BookInfoChange();
+            bookInfoChange.ShowDialog();
+        }
+
+        private void MainControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(MainControl.SelectedIndex == 4)
+            {
+                LoadBookAdminData();
+            }
         }
     }
 }

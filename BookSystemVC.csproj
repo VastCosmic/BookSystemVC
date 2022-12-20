@@ -92,6 +92,12 @@
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="BookInfo.cs" />
+    <Compile Include="BookInfoChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookInfoChange.Designer.cs">
+      <DependentUpon>BookInfoChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="BorrowRecord.cs" />
     <Compile Include="ChangeAdminForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +142,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AccountInfoForm.resx">
       <DependentUpon>AccountInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookInfoChange.resx">
+      <DependentUpon>BookInfoChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeAdminForm.resx">
       <DependentUpon>ChangeAdminForm.cs</DependentUpon>
