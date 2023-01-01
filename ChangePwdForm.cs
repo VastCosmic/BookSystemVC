@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookSystemVC
@@ -48,7 +43,7 @@ namespace BookSystemVC
         {
             if (txt_oldpwd.Text == User[0].password)
             {
-                if(txt_pwd.Text == txt_pwd2.Text)
+                if (txt_pwd.Text == txt_pwd2.Text)
                 {
                     DB db = new DB();
                     string dbCommand = "update usertable set password='" + txt_pwd.Text + "' where studentID='" + User[0].studentID + "'";
@@ -70,7 +65,7 @@ namespace BookSystemVC
                 }
             }
             else
-            {                
+            {
                 txt_oldpwd.Text = String.Empty;
                 txt_pwd.Text = String.Empty;
                 txt_pwd2.Text = String.Empty;

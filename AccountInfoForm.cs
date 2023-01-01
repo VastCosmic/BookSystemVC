@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookSystemVC
@@ -21,7 +15,7 @@ namespace BookSystemVC
         }
 
         //定义一个用户类型的List数组
-        List<User> User = new List<User>();       
+        List<User> User = new List<User>();
         //加载用户信息
         protected void LoadUser(string dbCommand)
         {

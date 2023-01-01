@@ -1,15 +1,5 @@
-﻿using Org.BouncyCastle.Utilities.Collections;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Windows.Forms;
-using static BookSystemVC.Login;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BookSystemVC
 {
@@ -32,19 +22,19 @@ namespace BookSystemVC
         /// </param>
         public List<BookInfo> BookSearch(string method, string key)
         {
-            if(method == "category")
+            if (method == "category")
             {
                 return SearchByCategory(key);
             }
-            else if(method == "bookname")
+            else if (method == "bookname")
             {
                 return SearchByBookname(key);
             }
-            else if(method == "author")
+            else if (method == "author")
             {
                 return SearchByAuthor(key);
             }
-            else if(method == "bookid")
+            else if (method == "bookid")
             {
                 return SearchByBookid(key);
             }
@@ -147,19 +137,19 @@ namespace BookSystemVC
         /// <param name="user">用户名</param>
         /// <returns></returns>
         protected bool RB_Book(int action, string user)
-        {               
+        {
             //数据库实例
             DB db = new DB();
 
             /*******数据库指令*******/
             //还书借书
             string dbCommand_return = "update booktable set status='在馆' where bookid='" + bookInfo[0].bookid + "'";
-            string dbCommand_borrow = "update booktable set status='外借' where bookid='" + bookInfo[0].bookid + "'";           
+            string dbCommand_borrow = "update booktable set status='外借' where bookid='" + bookInfo[0].bookid + "'";
             //还书借书记录
             string dbCommand_AddRecord_borrow = "INSERT INTO borrowrecord(user, bookid, bookname, borrowtime, status) VALUES('"
                 + user + "'," + bookInfo[0].bookid + ",'" + bookInfo[0].bookname + "',curdate(),'未还')";
             string dbCommand_AddRecord_Return = "update borrowrecord set status = '已还', returntime=curdate() where bookid='" + bookInfo[0].bookid + "' AND status='未还'";
-            
+
 
             switch (action)
             {

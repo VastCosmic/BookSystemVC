@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookSystemVC
@@ -15,7 +10,7 @@ namespace BookSystemVC
         //一个图书类型的List，以用于查询显示
         List<BookInfo> bookInfo = new List<BookInfo>();
         //影响的书号
-        string bookid="-1";
+        string bookid = "-1";
         public BookInfoChange(string bookid)
         {
             InitializeComponent();
@@ -77,17 +72,18 @@ namespace BookSystemVC
         protected bool CallAddBook()
         {
             //检查输入
-            if (CheckInput() == false) 
+            if (CheckInput() == false)
                 return false;
             //不存在才可以添加
             if (CheckID() == false)
             {
-                if(AddBook()==true)
+                if (AddBook() == true)
                     return true;
                 else
                     return false;
-            }else
-            MessageBox.Show("请检查书籍信息是否重复或错误！", "警告");
+            }
+            else
+                MessageBox.Show("请检查书籍信息是否重复或错误！", "警告");
             return false;
         }
         /// <summary>
@@ -123,7 +119,7 @@ namespace BookSystemVC
                     "VALUES(" + "'" + txt_bookid.Text + "'" + ", " + "'" + txt_category.Text + "'" + ", " + "'" + txt_bookname.Text + "'" + ", " + "'" + txt_author.Text + "'" + ", " + "'" + txt_press.Text + "'" + ", " + "'" + txt_status.Text + "'" + ")";
             if (db.Execute(dbCommand) > 0)
             {
-                if(AddCategory()==true)
+                if (AddCategory() == true)
                     return true;
                 MessageBox.Show("添加书籍类别出错！", "警告");
                 return false;
@@ -145,7 +141,7 @@ namespace BookSystemVC
             }
             else
                 if (db.Execute(dbCommand_Insert) > 0)
-                    return true;
+                return true;
             return false;
         }
         /// <summary>
@@ -197,7 +193,7 @@ namespace BookSystemVC
             DB db = new DB();
             string dbCommand_delect = "DELETE FROM booktable WHERE bookid=" + bookInfo[0].bookid;
             string dbCommand = "INSERT INTO " + "booktable" + "(bookid, category, bookname, author, press, status) " +
-                "VALUES(" + "'" + txt_bookid.Text + "'" + ", " + "'" + txt_category.Text + "'" + ", " + "'" + txt_bookname.Text + "'" + ", " + "'" + txt_author.Text + "'" + ", " + "'" + txt_press.Text + "'" + ", " + "'" + txt_status.Text + "'" + ")";          
+                "VALUES(" + "'" + txt_bookid.Text + "'" + ", " + "'" + txt_category.Text + "'" + ", " + "'" + txt_bookname.Text + "'" + ", " + "'" + txt_author.Text + "'" + ", " + "'" + txt_press.Text + "'" + ", " + "'" + txt_status.Text + "'" + ")";
             if (db.Execute(dbCommand_delect) > 0)
             {
                 if (db.Execute(dbCommand) > 0)

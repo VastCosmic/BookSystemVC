@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookSystemVC
@@ -16,7 +9,7 @@ namespace BookSystemVC
         public ChangeAdminForm()
         {
             InitializeComponent();
-            
+
         }
         int admin = 0;
         private void btn_change_Click(object sender, EventArgs e)
@@ -49,7 +42,7 @@ namespace BookSystemVC
         }
 
         private void ChangeAdminInfo()
-        {          
+        {
             DB db = new DB();
             string dbCommand;
             if (admin == 0)
@@ -71,7 +64,7 @@ namespace BookSystemVC
                 LoadAdminInfo();
             }
         }
-        
+
 
         private void btn_search_Click(object sender, EventArgs e)
         {

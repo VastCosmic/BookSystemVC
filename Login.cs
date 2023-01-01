@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookSystemVC
@@ -13,14 +9,14 @@ namespace BookSystemVC
         DB db = new DB();
         ////定义一个用户类型的List数组
         List<User> User = new List<User>();
-        
+
         public Login()
         {
             LoadUser();
         }
 
         //加载用户信息
-        protected void LoadUser()   
+        protected void LoadUser()
         {
             //解析方法
             using (IDataReader read = db.read("select * from usertable"))
@@ -41,16 +37,16 @@ namespace BookSystemVC
         }
 
         //用户登录
-        public bool UserLogin(string UserID,string UserPwd)
+        public bool UserLogin(string UserID, string UserPwd)
         {
-            if(UserID == null || UserPwd == null)
+            if (UserID == null || UserPwd == null)
             {
                 MessageBox.Show("请输入用户ID及密码！");
                 return false;
             }
             else
             {
-                for(int i = 0; i < User.Count; i++)
+                for (int i = 0; i < User.Count; i++)
                 {
                     if (UserID == User[i].user && UserPwd == User[i].password)
                     {

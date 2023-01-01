@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BookSystemVC
 {
     public partial class MainForm : Form
     {
-        
+
         User user = new User();
         public MainForm(object user_object)
         {
@@ -28,8 +21,8 @@ namespace BookSystemVC
         }
         //定义一个用户类型的List数组
         List<User> User = new List<User>();
-        
-        
+
+
         /// <summary>
         /// 加载用户信息
         /// </summary>
@@ -73,7 +66,7 @@ namespace BookSystemVC
         /// </summary>
         protected void Welcome()
         {
-            lbl_wel_user.Text=User[0].user+", 您好 ~~";
+            lbl_wel_user.Text = User[0].user + ", 您好 ~~";
         }
 
 
@@ -85,11 +78,11 @@ namespace BookSystemVC
         {
             if ((txt_search.Text == string.Empty || SearchContorl.SelectedItem == null) && (SearchContorl.Text != "全部"))
             {
-                MessageBox.Show("请输入查询信息！\n支持模糊查询。","提示");
+                MessageBox.Show("请输入查询信息！\n支持模糊查询。", "提示");
                 return;
             }
             string method = string.Empty;
-            if(SearchContorl.SelectedItem != null)
+            if (SearchContorl.SelectedItem != null)
             {
                 if (SearchContorl.Text == "按照书名查找")
                 {
@@ -126,16 +119,16 @@ namespace BookSystemVC
         /// </summary>
         private void btnBorrowSearch_Click(object sender, EventArgs e)
         {
-            if(txtID.Text == string.Empty)
+            if (txtID.Text == string.Empty)
             {
-                MessageBox.Show("请输入书号！","提示");
-                return ;
+                MessageBox.Show("请输入书号！", "提示");
+                return;
             }
             else
             {
                 List<BookInfo> bookInfo = new List<BookInfo>();
                 bookInfo = book.BorrowSearch(txtID.Text);
-                if(bookInfo.Count > 0)
+                if (bookInfo.Count > 0)
                 {
                     lbl_bookid.Text = bookInfo[0].bookid;
                     lbl_bookname.Text = bookInfo[0].bookname;
@@ -148,7 +141,7 @@ namespace BookSystemVC
                     }
                     else if (lbl_status.Text == "外借")
                     {
-                        btnReturn.Enabled = true; 
+                        btnReturn.Enabled = true;
                         btnBorrow.Enabled = false;
                     }
                 }
@@ -165,7 +158,7 @@ namespace BookSystemVC
         {
             if (lbl_bookid.Text != "请输入书号")
             {
-                if (book.ReturnBook(user.user)) 
+                if (book.ReturnBook(user.user))
                     MessageBox.Show("还书成功！", "提示");
                 else
                     MessageBox.Show("失败！\n请联系管理员！", "提示");
@@ -187,7 +180,7 @@ namespace BookSystemVC
             btnBorrow.Enabled = false;
         }
 
-        
+
         /// <summary>
         /// 退出登录按钮
         /// 退出登录并启动新登录界面
@@ -207,7 +200,7 @@ namespace BookSystemVC
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-            AccountInfoForm accountInfoForm = new AccountInfoForm(user.user);          
+            AccountInfoForm accountInfoForm = new AccountInfoForm(user.user);
             accountInfoForm.ShowDialog();
         }
 
@@ -266,13 +259,13 @@ namespace BookSystemVC
         }
         private void MainControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(MainControl.SelectedIndex == 4)
+            if (MainControl.SelectedIndex == 4)
             {
                 LoadBookAdminData();
             }
         }
 
-        
+
         /// <summary>
         /// 为解决Dategridview的索引问题，离开后将重置页面
         /// </summary>
@@ -313,7 +306,7 @@ namespace BookSystemVC
                 {
                     return;
                 }
-            }    
+            }
             MessageBox.Show("删除失败！", "警告");
         }
 
@@ -328,7 +321,7 @@ namespace BookSystemVC
                 DB db = new DB();
                 string dbCommand = "SELECT bookid FROM booktable WHERE bookid=" + txt_bookidAdmin.Text;
                 //存在书号则返回真
-                if (db.read(dbCommand).HasRows) 
+                if (db.read(dbCommand).HasRows)
                     return true;
                 MessageBox.Show("该书号不存在！", "提示");
                 return false;

@@ -191,5 +191,8 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="mysql\mysql_Bakup.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
