@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Org.BouncyCastle.Ocsp;
+using Org.BouncyCastle.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -66,9 +69,8 @@ namespace BookSystemVC
         /// </summary>
         protected void Welcome()
         {
-            lbl_wel_user.Text = User[0].user + ", 您好 ~~";
+            lbl_wel_user.Text = User[0].user+",您好！";
         }
-
 
         Book book = new Book();
         /// <summary>
@@ -363,6 +365,30 @@ namespace BookSystemVC
             BookInfoChange bookInfoChange = new BookInfoChange(txt_bookidAdmin.Text);
             bookInfoChange.ShowDialog();
             return false;
+        }
+
+        /************************
+        /// <summary>
+        /// 以下为UI设计
+        /// </summary>
+        ************************/
+        private void MainControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //SolidBrush ColorSelected = new SolidBrush(Color.FromArgb(39, 39, 58));
+            SolidBrush ColorUnSelected = new SolidBrush(Color.FromArgb(51, 51, 76));
+            SolidBrush ColorCard = new SolidBrush(Color.FromArgb(215, 228, 242));
+            //SolidBrush ColorFont = new SolidBrush(Color.Gainsboro);
+
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            
+            for(int i = 0; i < 5; i++)
+            {
+                Rectangle Rec1 = MainControl.GetTabRect(i);
+                e.Graphics.FillRectangle(ColorCard, Rec1);
+                //绘制标签头文字
+                e.Graphics.DrawString(MainControl.TabPages[i].Text, new Font("微软雅黑", 12, FontStyle.Bold), ColorUnSelected, Rec1, stringFormat);
+            }
         }
     }
 }
