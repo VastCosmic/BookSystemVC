@@ -34,6 +34,8 @@
             this.txt_user = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_change = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -69,6 +71,7 @@
             // 
             // txt_user
             // 
+            this.txt_user.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_user.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_user.Location = new System.Drawing.Point(130, 103);
             this.txt_user.Name = "txt_user";
@@ -77,6 +80,7 @@
             // 
             // txt_name
             // 
+            this.txt_name.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_name.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_name.Location = new System.Drawing.Point(130, 159);
             this.txt_name.Name = "txt_name";
@@ -85,31 +89,46 @@
             // 
             // btn_change
             // 
+            this.btn_change.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_change.FlatAppearance.BorderSize = 0;
+            this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_change.Location = new System.Drawing.Point(156, 242);
+            this.btn_change.Location = new System.Drawing.Point(0, 0);
             this.btn_change.Name = "btn_change";
-            this.btn_change.Size = new System.Drawing.Size(122, 40);
+            this.btn_change.Size = new System.Drawing.Size(434, 100);
             this.btn_change.TabIndex = 7;
             this.btn_change.Text = "确定修改";
             this.btn_change.UseVisualStyleBackColor = true;
             this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_change);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 211);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(434, 100);
+            this.panel1.TabIndex = 8;
+            // 
             // ChangeInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(434, 311);
-            this.Controls.Add(this.btn_change);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.txt_user);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_user);
             this.Controls.Add(this.lbl_title);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ChangeInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "修改信息";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +142,6 @@
         private System.Windows.Forms.TextBox txt_user;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_change;
+        private System.Windows.Forms.Panel panel1;
     }
 }

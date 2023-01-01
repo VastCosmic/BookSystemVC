@@ -35,14 +35,19 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_search = new System.Windows.Forms.Button();
             this.lbl_admin_status = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_change
             // 
+            this.btn_change.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_change.FlatAppearance.BorderSize = 0;
+            this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_change.Location = new System.Drawing.Point(219, 234);
+            this.btn_change.Location = new System.Drawing.Point(216, 0);
             this.btn_change.Name = "btn_change";
-            this.btn_change.Size = new System.Drawing.Size(122, 40);
+            this.btn_change.Size = new System.Drawing.Size(218, 100);
             this.btn_change.TabIndex = 13;
             this.btn_change.Text = "确定修改";
             this.btn_change.UseVisualStyleBackColor = true;
@@ -50,6 +55,7 @@
             // 
             // txt_id
             // 
+            this.txt_id.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_id.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_id.Location = new System.Drawing.Point(130, 108);
             this.txt_id.Name = "txt_id";
@@ -89,10 +95,13 @@
             // 
             // btn_search
             // 
+            this.btn_search.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_search.Location = new System.Drawing.Point(94, 234);
+            this.btn_search.Location = new System.Drawing.Point(0, 0);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(122, 40);
+            this.btn_search.Size = new System.Drawing.Size(218, 100);
             this.btn_search.TabIndex = 14;
             this.btn_search.Text = "查询";
             this.btn_search.UseVisualStyleBackColor = true;
@@ -107,23 +116,35 @@
             this.lbl_admin_status.TabIndex = 15;
             this.lbl_admin_status.Text = "(请输入学工号)";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_search);
+            this.panel1.Controls.Add(this.btn_change);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 211);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(434, 100);
+            this.panel1.TabIndex = 16;
+            // 
             // ChangeAdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(434, 311);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_admin_status);
-            this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.btn_change);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.lbl_admin);
             this.Controls.Add(this.lbl_user);
             this.Controls.Add(this.lbl_title);
             this.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "ChangeAdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "修改权限";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +159,6 @@
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label lbl_admin_status;
+        private System.Windows.Forms.Panel panel1;
     }
 }

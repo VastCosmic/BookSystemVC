@@ -47,7 +47,7 @@
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 58);
             this.dataGridView.Name = "dataGridView";
@@ -59,10 +59,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.lbl_title);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AccountInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

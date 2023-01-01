@@ -42,6 +42,8 @@
             this.lbl_author = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.txt_status = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -56,6 +58,7 @@
             // 
             // txt_bookid
             // 
+            this.txt_bookid.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_bookid.Location = new System.Drawing.Point(127, 109);
             this.txt_bookid.Name = "txt_bookid";
             this.txt_bookid.Size = new System.Drawing.Size(146, 34);
@@ -64,6 +67,7 @@
             // 
             // txt_category
             // 
+            this.txt_category.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_category.Location = new System.Drawing.Point(127, 175);
             this.txt_category.Name = "txt_category";
             this.txt_category.Size = new System.Drawing.Size(146, 34);
@@ -71,6 +75,7 @@
             // 
             // txt_bookname
             // 
+            this.txt_bookname.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_bookname.Location = new System.Drawing.Point(127, 241);
             this.txt_bookname.Name = "txt_bookname";
             this.txt_bookname.Size = new System.Drawing.Size(146, 34);
@@ -78,6 +83,7 @@
             // 
             // txt_press
             // 
+            this.txt_press.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_press.Location = new System.Drawing.Point(403, 175);
             this.txt_press.Name = "txt_press";
             this.txt_press.Size = new System.Drawing.Size(146, 34);
@@ -85,6 +91,7 @@
             // 
             // txt_author
             // 
+            this.txt_author.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_author.Location = new System.Drawing.Point(403, 109);
             this.txt_author.Name = "txt_author";
             this.txt_author.Size = new System.Drawing.Size(146, 34);
@@ -146,10 +153,15 @@
             // 
             // btn_add
             // 
-            this.btn_add.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_add.Location = new System.Drawing.Point(167, 321);
+            this.btn_add.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold);
+            this.btn_add.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_add.Location = new System.Drawing.Point(0, 0);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(300, 50);
+            this.btn_add.Size = new System.Drawing.Size(634, 100);
             this.btn_add.TabIndex = 19;
             this.btn_add.Text = "添加";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -157,6 +169,7 @@
             // 
             // txt_status
             // 
+            this.txt_status.BackColor = System.Drawing.Color.AliceBlue;
             this.txt_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_status.FormattingEnabled = true;
             this.txt_status.Items.AddRange(new object[] {
@@ -167,13 +180,23 @@
             this.txt_status.Size = new System.Drawing.Size(146, 35);
             this.txt_status.TabIndex = 20;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_add);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 311);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(634, 100);
+            this.panel1.TabIndex = 21;
+            // 
             // BookInfoChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(634, 411);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_status);
-            this.Controls.Add(this.btn_add);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.lbl_press);
             this.Controls.Add(this.lbl_author);
@@ -187,10 +210,12 @@
             this.Controls.Add(this.txt_bookid);
             this.Controls.Add(this.lbl_title);
             this.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "BookInfoChange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "图书信息管理";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +237,6 @@
         private System.Windows.Forms.Label lbl_author;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.ComboBox txt_status;
+        private System.Windows.Forms.Panel panel1;
     }
 }
