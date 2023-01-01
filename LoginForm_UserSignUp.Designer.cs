@@ -46,7 +46,7 @@
             // 
             this.lbl_signup.AutoSize = true;
             this.lbl_signup.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_signup.Location = new System.Drawing.Point(162, 26);
+            this.lbl_signup.Location = new System.Drawing.Point(262, 26);
             this.lbl_signup.Name = "lbl_signup";
             this.lbl_signup.Size = new System.Drawing.Size(110, 31);
             this.lbl_signup.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             this.lbl_user.AutoSize = true;
             this.lbl_user.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_user.Location = new System.Drawing.Point(63, 99);
+            this.lbl_user.Location = new System.Drawing.Point(48, 129);
             this.lbl_user.Name = "lbl_user";
             this.lbl_user.Size = new System.Drawing.Size(58, 22);
             this.lbl_user.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             this.lbl_studentID.AutoSize = true;
             this.lbl_studentID.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_studentID.Location = new System.Drawing.Point(63, 146);
+            this.lbl_studentID.Location = new System.Drawing.Point(48, 176);
             this.lbl_studentID.Name = "lbl_studentID";
             this.lbl_studentID.Size = new System.Drawing.Size(58, 22);
             this.lbl_studentID.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_name.Location = new System.Drawing.Point(79, 193);
+            this.lbl_name.Location = new System.Drawing.Point(64, 223);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(42, 22);
             this.lbl_name.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             this.lbl_pwd.AutoSize = true;
             this.lbl_pwd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_pwd.Location = new System.Drawing.Point(79, 240);
+            this.lbl_pwd.Location = new System.Drawing.Point(356, 132);
             this.lbl_pwd.Name = "lbl_pwd";
             this.lbl_pwd.Size = new System.Drawing.Size(42, 22);
             this.lbl_pwd.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             this.lbl_pwd2.AutoSize = true;
             this.lbl_pwd2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_pwd2.Location = new System.Drawing.Point(47, 287);
+            this.lbl_pwd2.Location = new System.Drawing.Point(324, 179);
             this.lbl_pwd2.Name = "lbl_pwd2";
             this.lbl_pwd2.Size = new System.Drawing.Size(74, 22);
             this.lbl_pwd2.TabIndex = 6;
@@ -105,35 +105,35 @@
             // 
             // txt_user
             // 
-            this.txt_user.Location = new System.Drawing.Point(127, 96);
+            this.txt_user.Location = new System.Drawing.Point(112, 126);
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(180, 29);
             this.txt_user.TabIndex = 1;
             // 
             // txt_studentID
             // 
-            this.txt_studentID.Location = new System.Drawing.Point(127, 143);
+            this.txt_studentID.Location = new System.Drawing.Point(112, 173);
             this.txt_studentID.Name = "txt_studentID";
             this.txt_studentID.Size = new System.Drawing.Size(180, 29);
             this.txt_studentID.TabIndex = 2;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(127, 190);
+            this.txt_name.Location = new System.Drawing.Point(112, 220);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(180, 29);
             this.txt_name.TabIndex = 3;
             // 
             // txt_pwd
             // 
-            this.txt_pwd.Location = new System.Drawing.Point(127, 237);
+            this.txt_pwd.Location = new System.Drawing.Point(404, 129);
             this.txt_pwd.Name = "txt_pwd";
             this.txt_pwd.Size = new System.Drawing.Size(180, 29);
             this.txt_pwd.TabIndex = 4;
             // 
             // txt_pwd2
             // 
-            this.txt_pwd2.Location = new System.Drawing.Point(127, 284);
+            this.txt_pwd2.Location = new System.Drawing.Point(404, 176);
             this.txt_pwd2.Name = "txt_pwd2";
             this.txt_pwd2.Size = new System.Drawing.Size(180, 29);
             this.txt_pwd2.TabIndex = 5;
@@ -141,7 +141,7 @@
             // btn_signup
             // 
             this.btn_signup.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_signup.Location = new System.Drawing.Point(67, 337);
+            this.btn_signup.Location = new System.Drawing.Point(167, 307);
             this.btn_signup.Name = "btn_signup";
             this.btn_signup.Size = new System.Drawing.Size(300, 50);
             this.btn_signup.TabIndex = 7;
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 411);
+            this.ClientSize = new System.Drawing.Size(634, 411);
             this.Controls.Add(this.btn_signup);
             this.Controls.Add(this.txt_pwd2);
             this.Controls.Add(this.txt_pwd);
@@ -167,7 +167,7 @@
             this.Controls.Add(this.lbl_user);
             this.Controls.Add(this.lbl_signup);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "LoginForm_UserSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户注册";

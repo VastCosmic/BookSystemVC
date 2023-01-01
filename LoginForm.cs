@@ -25,7 +25,7 @@ namespace BookSystemVC
             Login login = new Login();
             if (login.UserLogin(txt_user.Text, txt_pwd.Text) == true)
             {
-                MessageBox.Show("登录成功！");
+                //MessageBox.Show("登录成功！");
                 //启动新线程主应用
                 Thread thread = new Thread(new ParameterizedThreadStart(StartMainForm));
                 string user = txt_user.Text;

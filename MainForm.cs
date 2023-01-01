@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,10 +15,11 @@ namespace BookSystemVC
 {
     public partial class MainForm : Form
     {
+        
         User user = new User();
         public MainForm(object user_object)
         {
-            InitializeComponent();           
+            InitializeComponent();
             user.user = user_object.ToString(); //取得user账户
             LoadUser();
             Welcome();
@@ -26,7 +28,11 @@ namespace BookSystemVC
         }
         //定义一个用户类型的List数组
         List<User> User = new List<User>();
-        //加载用户信息
+        
+        
+        /// <summary>
+        /// 加载用户信息
+        /// </summary>
         protected void LoadUser()
         {
             DB db = new DB();
@@ -47,27 +53,34 @@ namespace BookSystemVC
                 }
             }
         }
-
         /// <summary>
         /// 打开管理员权限界面
         /// </summary>
         private void OpenAdmin()
         {
+            lbl_bookidAdmin.Enabled = true;
+            lbl_bookTitle.Enabled = true;
             btn_changeAdmin.Enabled = true;
             btn_add_book.Enabled = true;
             btn_delet_book.Enabled = true;
             btn_change_book.Enabled = true;
-            btn_add_cate.Enabled = true;
-            btn_change_cate.Enabled = true;
+            btn_refresh.Enabled = true;
+            txt_bookidAdmin.Enabled = true;
             dataGridView_admin.Visible = true;
         }
-
+        /// <summary>
+        /// 主界面
+        /// </summary>
         protected void Welcome()
         {
             lbl_wel_user.Text=User[0].user+", 您好 ~~";
         }
 
+
         Book book = new Book();
+        /// <summary>
+        /// 主查询按钮
+        /// </summary>
         private void btn_search_Click(object sender, System.EventArgs e)
         {
             if ((txt_search.Text == string.Empty || SearchContorl.SelectedItem == null) && (SearchContorl.Text != "全部"))
@@ -108,7 +121,9 @@ namespace BookSystemVC
                 }
             }
         }
-
+        /// <summary>
+        /// 借书查询按钮
+        /// </summary>
         private void btnBorrowSearch_Click(object sender, EventArgs e)
         {
             if(txtID.Text == string.Empty)
@@ -143,7 +158,9 @@ namespace BookSystemVC
                 }
             }
         }
-
+        /// <summary>
+        /// 借还按钮
+        /// </summary>
         private void btnReturn_Click(object sender, System.EventArgs e)
         {
             if (lbl_bookid.Text != "请输入书号")
@@ -171,9 +188,10 @@ namespace BookSystemVC
         }
 
         
-
-
-        //退出登录并启动新登录界面
+        /// <summary>
+        /// 退出登录按钮
+        /// 退出登录并启动新登录界面
+        /// </summary>
         private void btn_logout_Click(object sender, EventArgs e)
         {
             //启动新线程应用
@@ -218,8 +236,11 @@ namespace BookSystemVC
             ChangeAdminForm changeAdminForm = new ChangeAdminForm();
             changeAdminForm.ShowDialog();
         }
-    
-    
+
+
+        /// <summary>
+        /// 图书管理界面的书籍显示初始加载
+        /// </summary>
         protected void LoadBookAdminData()
         {
             dataGridView_admin.ReadOnly = true;
@@ -229,23 +250,126 @@ namespace BookSystemVC
             dataGridView_admin.Refresh();
         }
 
+        /// <summary>
+        /// 启动图书信息窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_add_book_Click(object sender, EventArgs e)
         {
             ShowBookAdmin();
         }
-
         protected void ShowBookAdmin()
         {
-            BookInfoChange bookInfoChange = new BookInfoChange();
+            BookInfoChange bookInfoChange = new BookInfoChange("-1");
             bookInfoChange.ShowDialog();
         }
-
         private void MainControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(MainControl.SelectedIndex == 4)
             {
                 LoadBookAdminData();
             }
+        }
+
+        
+        /// <summary>
+        /// 为解决Dategridview的索引问题，离开后将重置页面
+        /// </summary>
+        private void MainControl_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            RefreshPage();
+        }
+        protected void RefreshPage()
+        {
+            dataGridView.DataSource = null;
+            dataGridView_admin.DataSource = null;
+            dataGridViewAccount.DataSource = null;
+        }
+        /// <summary>
+        /// 重新加载书籍界面
+        /// </summary>
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            LoadBookAdminData();
+        }
+
+        private void btn_change_book_Click(object sender, EventArgs e)
+        {
+            if (CheckTxt_bookidAdmin() == true)
+            {
+                if (ChangeBook() == true)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void btn_delet_book_Click(object sender, EventArgs e)
+        {
+            if (CheckTxt_bookidAdmin() == true)
+            {
+                if (DeleteBook() == true)
+                {
+                    return;
+                }
+            }    
+            MessageBox.Show("删除失败！", "警告");
+        }
+
+        /// <summary>
+        /// 检查是否已经输入书号，并检查该书号是否存在
+        /// </summary>
+        /// <returns></returns>
+        protected bool CheckTxt_bookidAdmin()
+        {
+            if (txt_bookidAdmin.Text != string.Empty)
+            {
+                DB db = new DB();
+                string dbCommand = "SELECT bookid FROM booktable WHERE bookid=" + txt_bookidAdmin.Text;
+                //存在书号则返回真
+                if (db.read(dbCommand).HasRows) 
+                    return true;
+                MessageBox.Show("该书号不存在！", "提示");
+                return false;
+            }
+            MessageBox.Show("请输入书号！", "提示");
+            return false;
+        }
+        /// <summary>
+        /// 限制只能输入数字
+        /// </summary>
+        private void txt_bookidAdmin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+        /// <summary>
+        /// 删除书籍的具体实现
+        /// </summary>
+        /// <returns></returns>
+        protected bool DeleteBook()
+        {
+            DB db = new DB();
+            string dbCommand = "DELETE FROM booktable WHERE bookid=" + txt_bookidAdmin.Text;
+            if (db.Execute(dbCommand) > 0)
+            {
+                MessageBox.Show("删除成功！", "提示");
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// 修改图书信息的具体实现
+        /// </summary>
+        /// <returns></returns>
+        protected bool ChangeBook()
+        {
+            BookInfoChange bookInfoChange = new BookInfoChange(txt_bookidAdmin.Text);
+            bookInfoChange.ShowDialog();
+            return false;
         }
     }
 }

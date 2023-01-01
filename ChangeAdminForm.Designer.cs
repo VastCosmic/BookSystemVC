@@ -123,7 +123,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "ChangeAdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ChangeAdminForm";
+            this.Text = "修改权限";
             this.ResumeLayout(false);
             this.PerformLayout();
 
