@@ -1,6 +1,4 @@
-﻿using Org.BouncyCastle.Ocsp;
-using Org.BouncyCastle.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -69,7 +67,7 @@ namespace BookSystemVC
         /// </summary>
         protected void Welcome()
         {
-            lbl_wel_user.Text = User[0].user+",您好！";
+            lbl_wel_user.Text = User[0].user + ",您好！";
         }
 
         Book book = new Book();
@@ -381,8 +379,8 @@ namespace BookSystemVC
 
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
-            
-            for(int i = 0; i < 5; i++)
+
+            for (int i = 0; i < 5; i++)
             {
                 Rectangle Rec1 = MainControl.GetTabRect(i);
                 e.Graphics.FillRectangle(ColorCard, Rec1);

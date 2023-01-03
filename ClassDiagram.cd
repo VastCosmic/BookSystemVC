@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="BookSystemVC.AccountInfoForm" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAEAAAACAAAgCAABAAAAAAAIAAAAAAQA=</HashCode>
+      <FileName>AccountInfoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.Book" Collapsed="true">
+    <Position X="3.25" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAIQAAAgAQACAAAAAAAAAABABEAAAAQAAAEAAAAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.BookInfo" Collapsed="true">
+    <Position X="0.5" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAACAAAAAAAAAAAAAAAIAAAABAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>BookInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.BookInfoChange" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAIIDAAECYAAAACADCAgAgCAAJGAhAAAAAACQA0ACA=</HashCode>
+      <FileName>BookInfoChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.BorrowRecord" Collapsed="true">
+    <Position X="3" Y="6.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>SAQAACEAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAQA=</HashCode>
+      <FileName>BorrowRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.ChangeAdminForm" Collapsed="true">
+    <Position X="8" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAGACAAAAAECAQAgCGAUAAAAAAAAQAQAACAA=</HashCode>
+      <FileName>ChangeAdminForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.ChangeInfoForm" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAACAAgIAAAACAAAgCCAAAAgAAAAIIAQAACQA=</HashCode>
+      <FileName>ChangeInfoForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.ChangePwdForm" Collapsed="true">
+    <Position X="3" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEBCAAIhCAAAAAAAAGgAAgCCAAAAAAAIAIAAQAAAQA=</HashCode>
+      <FileName>ChangePwdForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.DB" Collapsed="true">
+    <Position X="2.5" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAgCAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.Login" Collapsed="true">
+    <Position X="6" Y="3" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EAABAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.LoginForm" Collapsed="true">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIADAAAAAQAACAAAACABAAAAAAAAAIIQAEAAA=</HashCode>
+      <FileName>LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.LoginForm_UserSignUp" Collapsed="true">
+    <Position X="3.25" Y="3" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgCAAIACCAgIAAAACgAAACAAAAAAAgIAAIIQAEGAA=</HashCode>
+      <FileName>LoginForm_UserSignUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.MainForm" Collapsed="true">
+    <Position X="0.5" Y="4" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ALAXuBAUOCQKUFwCJoLAwIBCBhASALgUACYQXWeMJUA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.Program" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.User" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAgAAAQA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookSystemVC.Properties.Settings" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
